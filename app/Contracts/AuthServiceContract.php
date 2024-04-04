@@ -9,5 +9,5 @@ interface AuthServiceContract
 {
     public function register(RegisterRequestDto $registerRequestDto): LoggedUserDto;
 
-    public function confirmationEmail(string $userId, string $code): void;
+    public function confirmationEmail(int $userId, string $code): void;
 }

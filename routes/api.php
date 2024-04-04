@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,5 +31,8 @@ Route::group([
     ], function () {
         Route::post('confirmation-email', [AuthController::class, 'confirmationEmail'])
             ->name('confirmation-email');
+
+        Route::get('get-confirm-methods', [UserController::class, 'getAvailableNotificationMethods']);
+        Route::post('send-confirm-code', [UserController::class, 'sendConfirmCode']);
     });
 });
